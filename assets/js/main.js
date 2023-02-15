@@ -104,7 +104,7 @@
 		timerSpan4 = document.getElementById('nft4-time'),
 		year = target.getFullYear(),
 		month = target.getMonth(),
-		day = target.getDate(),
+		day = target.getDate() - 2,
 		date = `${year}, ${month}, ${day}`,
 		startTime1 = `${date} 07:24:12`,
 		nft1Time = new Date(startTime1),
