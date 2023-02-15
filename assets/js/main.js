@@ -106,13 +106,13 @@
 		month = target.getMonth(),
 		day = target.getDate() - 2,
 		date = `${year}, ${month}, ${day}`,
-		startTime1 = `${date} 07:24:12`,
+		startTime1 = `${date} 14:24:12`,
 		nft1Time = new Date(startTime1),
 		startTime2 = `${date} 13:27:13`,
 		nft2Time = new Date(startTime2),
-		startTime3 = `${date} 10:00:02`,
+		startTime3 = `${date} 16:00:02`,
 		nft3Time = new Date(startTime3),
-		startTime4 = `${date} 09:00:00`,
+		startTime4 = `${date} 19:00:00`,
 		nft4Time = new Date(startTime4),
 		handler;
 
