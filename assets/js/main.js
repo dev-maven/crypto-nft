@@ -104,17 +104,19 @@
 		timerSpan4 = document.getElementById('nft4-time'),
 		year = target.getFullYear(),
 		month = target.getMonth(),
-		day = target.getDate() - 2,
-		date = `${year}, ${month}, ${day}`,
-		startTime1 = `${date} 14:24:12`,
-		nft1Time = new Date(startTime1),
-		startTime2 = `${date} 13:27:13`,
-		nft2Time = new Date(startTime2),
-		startTime3 = `${date} 16:00:02`,
-		nft3Time = new Date(startTime3),
-		startTime4 = `${date} 19:00:00`,
-		nft4Time = new Date(startTime4),
+		day = target.getDate(),
+		date = `${year}-0${month}-${day}`,
+		startTime1 = `${date} 07:24:12`,
+		nft1Time = new Date(startTime1.replace(/-/g, '/')),
+		startTime2 = `${date} 01:27:13`,
+		nft2Time = new Date(startTime2.replace(/-/g, '/')),
+		startTime3 = `${date} 10:00:02`,
+		nft3Time = new Date(startTime3.replace(/-/g, '/')),
+		startTime4 = `${date} 09:00:00`,
+		nft4Time = new Date(startTime4.replace(/-/g, '/')),
 		handler;
+
+	console.log(startTime2);
 
 	function updateTimer() {
 		var time1 = nft1Time.getTime();
@@ -129,7 +131,13 @@
 		var time2 = nft2Time.getTime();
 		nft2Time.setTime(time2 + 1000);
 		source2 = nft2Time.toTimeString().split(' ')[0];
+
+		var timerSpan2s = document.getElementById('nft2-times');
 		timerSpan2.innerHTML = source2.replace(
+			new RegExp('\\' + [':'].join('|\\'), 'g'),
+			' $& '
+		);
+		timerSpan2s.innerHTML = source2.replace(
 			new RegExp('\\' + [':'].join('|\\'), 'g'),
 			' $& '
 		);
